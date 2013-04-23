@@ -2,6 +2,8 @@ Revision history for {{$dist->name}}
 
 {{$NEXT}}
 
+0.028_97  2013-04-23 06:17:12 America/Los_Angeles
+
 0.028_96  2013-02-24 16:19:15 America/Los_Angeles
 
 	Support specifying the git binary location on new (Todd Rinaldo)
