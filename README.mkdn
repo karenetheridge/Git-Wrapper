@@ -41,7 +41,7 @@ retain their order. Some examples may help clarify. This code:
 
     $git->commit({ message => "stuff" , all => 1 });
 
-may produce into this shell command:
+may produce this shell command:
 
     git commit --all --message="stuff"
 
@@ -83,6 +83,15 @@ To pass content via STDIN, use the -STDIN option:
 Output is available as an array of lines, each chomped.
 
     @sha1s_and_titles = $git->rev_list({ all => 1, pretty => 'oneline' });
+
+### Passing stringify-able objects as arguments
+
+Objects may be passed in the place of scalars, assuming those objects overload
+stringification in such a way as to produce a useful value. However, relying
+on this stringification is discouraged and likely to be officially deprecated
+in a subsequent release. Instead, if you have an object that stringifies to a
+meaningful value (_e.g._, a [Path::Class](http://search.cpan.org/perldoc?Path::Class) object), you should stringify it
+yourself before passing it to `Git::Wrapper` methods.
 
 ## Error handling
 
