@@ -15,6 +15,7 @@ use File::pushd;
 use File::Temp;
 use IPC::Cmd        qw(can_run);
 use IPC::Open3      qw();
+use Scalar::Util    qw(blessed);
 use Sort::Versions;
 use Symbol;
 
@@ -35,11 +36,15 @@ sub new {
 
   if ( scalar @_ == 1 ) {
     my $arg = shift;
-    if ( ! ref $arg ) { $args = { dir => $arg } }
-    elsif ( ref $arg eq 'HASH' ) { $args = $arg }
+    if ( ref $arg eq 'HASH' ) { $args = $arg }
+    elsif ( blessed $arg )    { $args = { dir => "$arg" } }  # my objects, let me
+                                                             # show you them.
+    elsif ( ! ref $arg )      { $args = { dir =>  $arg  } }
+    else { die "Single arg must be hashref, scalar, or stringify-able object" }
   }
   else {
     my( $dir , %opts ) = @_;
+    $dir = "$dir" if blessed $dir; # we can stringify it for you wholesale
     $args = { dir => $dir , %opts }
   }
 
@@ -347,8 +352,12 @@ sub _parse_args {
         }
       }
     }
+    elsif ( blessed $_ ) {
+      push @post_cmd , "$_";      # here be anteaters
+    }
     elsif ( ref $_ ) {
-      die "Git::Wrapper command arguments must be plain scalars or hashrefs.\n";
+      die "Git::Wrapper command arguments must be plain scalars, hashrefs, "
+        . "or stringify-able objects.\n";
     }
     else { push @post_cmd , $_; }
   }
