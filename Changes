@@ -2,6 +2,8 @@ Revision history for {{$dist->name}}
 
 {{$NEXT}}
 
+0.030     2013-07-29 09:23:13 America/Los_Angeles
+
         Add explicit version dep on Path::Class (#40) (John SJ Anderson)
         Fixes typos. (Olaf Alders)
 
