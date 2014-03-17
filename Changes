@@ -2,6 +2,8 @@ Revision history for {{$dist->name}}
 
 {{$NEXT}}
 
+0.031     2014-03-17 08:10:42-07:00 America/Los_Angeles
+
         Only load IPC::Cmd if needed (Graham Knop)
         Reduce dependency on Path::Class to test.recommends, fix min version (Kent Fredric)
         Increment minimum version in eval check to match stated dist.ini version
