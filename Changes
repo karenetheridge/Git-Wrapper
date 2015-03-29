@@ -2,6 +2,8 @@ Revision history for {{$dist->name}}
 
 {{$NEXT}}
 
+0.043     2015-03-28 20:07:33-07:00 America/Los_Angeles
+
         No changes from 0.042-TRIAL (see also changes for 0.041-TRIAL)
 
 0.042     2015-03-23 21:54:11-07:00 America/Los_Angeles (TRIAL RELEASE)
