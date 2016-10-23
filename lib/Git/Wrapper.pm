@@ -415,7 +415,7 @@ __END__
 
   # specify which git binary to use
   my $git = Git::Wrapper->new({
-    dir        => '/var/foo ,
+    dir        => '/var/foo',
     git_binary => '/path/to/git/bin/git' ,
   });
 
@@ -496,7 +496,7 @@ yourself before passing it to C<Git::Wrapper> methods.
 =head2 Error handling
 
 If a git command exits nonzero, a C<Git::Wrapper::Exception> object will be
-thrown (via C<die>) and may be capture via C<eval> or L<Try::Tiny>, for
+thrown (via C<die>) and may be captured via C<eval> or L<Try::Tiny>, for
 example.
 
 The error object has three useful methods:
@@ -636,7 +636,7 @@ Only populated with when C<< raw => 1 >> option is set; see L<Raw logs> below.
 Calling the C<log> method with the C<< raw => 1 >> option set, as below, will
 do additional parsing to populate the C<modifications> attribute on each
 C<Git::Wrapper::Log> object. This method returns a list of
-C<Git::Wrapper::File::RawModification> objects, with can be used to get
+C<Git::Wrapper::File::RawModification> objects, which can be used to get
 filenames, permissions, and other metadata associated with individual files in
 the given commit. A short example, to loop over all commits in the log and
 print the filenames that were changed in each commit, one filename per file:
