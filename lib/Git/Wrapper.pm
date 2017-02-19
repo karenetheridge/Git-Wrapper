@@ -132,10 +132,7 @@ sub RUN {
     );
   }
 
-  chomp(@err);
   $self->{err} = \@err;
-
-  chomp(@out);
   $self->{out} = \@out;
 
   return @out;
