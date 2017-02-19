@@ -280,7 +280,7 @@ sub supports_hash_object_filters {
   my $self = shift;
 
   # The '--no-filters' option to 'git-hash-object' was added in version 1.6.1
-  return 0 if ( versioncmp( $self->version , '1.6.1' ) eq -1 );
+  return 0 if ( versioncmp( $self->version , '1.6.1' ) == -1 );
   return 1;
 }
 
@@ -288,14 +288,14 @@ sub supports_log_no_abbrev_commit {
   my $self = shift;
 
   # The '--no-abbrev-commit' option to 'git log' was added in version 1.7.6
-  return ( versioncmp( $self->version , '1.7.6' ) eq -1 ) ? 0 : 1;
+  return ( versioncmp( $self->version , '1.7.6' ) == -1 ) ? 0 : 1;
 }
 
 sub supports_log_no_expand_tabs {
   my $self = shift;
 
   # The '--no-expand-tabs' option to git log was added in version 2.9.0
-  return 0 if ( versioncmp( $self->version , '2.9' ) eq -1 );
+  return 0 if ( versioncmp( $self->version , '2.9' ) == -1 );
   return 1;
 }
 
@@ -303,7 +303,7 @@ sub supports_log_raw_dates {
   my $self = shift;
 
   # The '--date=raw' option to 'git log' was added in version 1.6.2
-  return 0 if ( versioncmp( $self->version , '1.6.2' ) eq -1 );
+  return 0 if ( versioncmp( $self->version , '1.6.2' ) == -1 );
   return 1;
 }
 
@@ -311,7 +311,7 @@ sub supports_status_porcelain {
   my $self = shift;
 
   # The '--porcelain' option to git status was added in version 1.7.0
-  return 0 if ( versioncmp( $self->version , '1.7' ) eq -1 );
+  return 0 if ( versioncmp( $self->version , '1.7' ) == -1 );
   return 1;
 }
 
