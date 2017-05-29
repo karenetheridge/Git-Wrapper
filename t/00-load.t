@@ -1,3 +1,5 @@
+use strict;
+use warnings;
 use Test::More tests => 6;
 
 BEGIN {
@@ -9,4 +11,4 @@ BEGIN {
   use_ok('Git::Wrapper');
 }
 
-diag( "Testing Git::Wrapper $Git::Wrapper::VERSION" );
+diag( "Testing Git::Wrapper ", ($Git::Wrapper::VERSION || 'in repo') );
