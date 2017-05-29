@@ -4,7 +4,6 @@ use Test::More;
 
 use File::Temp qw(tempdir);
 use Git::Wrapper;
-use POSIX qw(strftime);
 use Sort::Versions;
 use Test::Deep;
 use Test::Exception;

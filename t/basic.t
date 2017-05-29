@@ -7,7 +7,6 @@ use IO::File;
 use Git::Wrapper;
 use File::Spec;
 use File::Path qw(mkpath);
-use POSIX qw(strftime);
 use Sort::Versions;
 use Test::Deep;
 use Test::Exception;
