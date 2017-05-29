@@ -501,7 +501,7 @@ Objects may be passed in the place of scalars, assuming those objects overload
 stringification in such a way as to produce a useful value. However, relying
 on this stringification is discouraged and likely to be officially deprecated
 in a subsequent release. Instead, if you have an object that stringifies to a
-meaningful value (I<e.g.>, a L<Path::Class> object), you should stringify it
+meaningful value (I<e.g.>, a L<Path::Class> or L<Path::Tiny> object), you should stringify it
 yourself before passing it to C<Git::Wrapper> methods.
 
 =head2 Error handling
