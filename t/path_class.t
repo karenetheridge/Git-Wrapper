@@ -6,7 +6,6 @@ use File::Temp qw(tempdir);
 use Git::Wrapper;
 use Sort::Versions;
 use Test::Deep;
-use Test::Exception;
 
 eval "use Path::Class 0.26; 1" or plan skip_all =>
     "Path::Class 0.26 is required for this test.";

@@ -9,7 +9,7 @@ use File::Spec;
 use File::Path qw(mkpath);
 use Sort::Versions;
 use Test::Deep;
-use Test::Exception;
+use Test::Fatal;
 
 my $dir = tempdir(CLEANUP => 1);
 
@@ -77,7 +77,7 @@ my $log = $log[0];
 is($log->id, (split /\s/, $rev_list[0])[0], 'id');
 is($log->message, "FIRST\n\n\tBODY\n", "message");
 
-throws_ok { $git->log( "--format=%H" ) } q{Git::Wrapper::Exception};
+is ref(exception { $git->log( "--format=%H" ) }), q{Git::Wrapper::Exception};
 
 SKIP: {
   skip 'testing old git without raw date support' , 1
@@ -107,10 +107,10 @@ SKIP:
     skip 'testing old git without log --oneline support' , 3;
   }
 
-  throws_ok { $git->log('--oneline') } qr/^unhandled/ , 'log(--oneline) dies';
+  like exception { $git->log('--oneline') }, qr/^unhandled/ , 'log(--oneline) dies';
 
   my @lines;
-  lives_ok { @lines = $git->RUN('log' , '--oneline' ) } 'RUN(log --oneline) lives';
+  is exception { @lines = $git->RUN('log' , '--oneline' ) }, undef, 'RUN(log --oneline) lives';
   is( @lines , 1 , 'one log entry' );
 }
 

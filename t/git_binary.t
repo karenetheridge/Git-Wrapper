@@ -3,7 +3,7 @@
 use strict;
 use warnings;
 use Test::More;
-use Test::Exception;
+use Test::Fatal;
 
 use File::Temp qw(tempdir);
 use Git::Wrapper;
@@ -22,10 +22,10 @@ my $dir = tempdir(CLEANUP => 1);
 }
 
 {
-  dies_ok { my $git = Git::Wrapper->new() } 'need a dir';
-  dies_ok { my $git = Git::Wrapper->new(['foo']) } 'need to call properly';
-  dies_ok { my $git = Git::Wrapper->new([dir => 'foo']) } 'no, really, need to call properly';
-  dies_ok { my $git = Git::Wrapper->new({ git_binary => "$dir/echo" }) } 'just git_binary fails';
+  like exception { my $git = Git::Wrapper->new() }, qr/^usage: /, 'need a dir';
+  like exception { my $git = Git::Wrapper->new(['foo']) }, qr/^Single arg must be hashref, scalar, or stringify-able object/, 'need to call properly';
+  like exception { my $git = Git::Wrapper->new([dir => 'foo']) }, qr/^Single arg must be hashref, scalar, or stringify-able object/, 'no, really, need to call properly';
+  like exception { my $git = Git::Wrapper->new({ git_binary => "$dir/echo" }) }, qr/^usage: /, 'just git_binary fails';
 }
 
 done_testing();
