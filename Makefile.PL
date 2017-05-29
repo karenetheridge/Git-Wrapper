@@ -42,15 +42,13 @@ my %WriteMakefileArgs = (
   "TEST_REQUIRES" => {
     "File::Path" => 0,
     "File::Spec" => 0,
-    "File::Temp" => 0,
     "IO::File" => 0,
     "POSIX" => 0,
-    "Sort::Versions" => 0,
     "Test::Deep" => 0,
     "Test::Exception" => 0,
     "Test::More" => 0
   },
-  "VERSION" => "0.047",
+  "VERSION" => "0.048",
   "test" => {
     "TESTS" => "t/*.t"
   }
