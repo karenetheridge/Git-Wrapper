@@ -36,8 +36,8 @@ sub new {
   if ( scalar @_ == 1 ) {
     my $arg = shift;
     if ( ref $arg eq 'HASH' ) { $args = $arg }
-    elsif ( blessed $arg )    { $args = { dir => "$arg" } }  # my objects, let me
-                                                             # show you them.
+    elsif ( blessed $arg )    { $args = { dir => "$arg" } } # my objects, let me
+                                                            # show you them.
     elsif ( ! ref $arg )      { $args = { dir =>  $arg  } }
     else { die "Single arg must be hashref, scalar, or stringify-able object" }
   }
@@ -70,7 +70,7 @@ sub OUT { shift->{out} }
 
 sub AUTOPRINT {
     my $self = shift;
-    
+
     $self->{autoprint} = shift if @_;
 
     return $self->{autoprint};
@@ -597,7 +597,7 @@ RECOMMENDED!>
   # To force the git binary location
   my $git = Git::Wrapper->new($dir, 'git_binary' => '/usr/local/bin/git');
 
-  # prints the content of OUT and ERR to STDOUT and STDERR 
+  # prints the content of OUT and ERR to STDOUT and STDERR
   # after a command is run
   my $git = Git::Wrapper->new($dir, autoprint => 1);
 
