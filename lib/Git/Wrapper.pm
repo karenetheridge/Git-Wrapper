@@ -651,7 +651,7 @@ Only populated with when C<< raw => 1 >> option is set; see L<Raw logs> below.
 Calling the C<log> method with the C<< raw => 1 >> option set, as below, will
 do additional parsing to populate the C<modifications> attribute on each
 C<Git::Wrapper::Log> object. This method returns a list of
-C<Git::Wrapper::File::RawModification> objects, with can be used to get
+C<Git::Wrapper::File::RawModification> objects, which can be used to get
 filenames, permissions, and other metadata associated with individual files in
 the given commit. A short example, to loop over all commits in the log and
 print the filenames that were changed in each commit, one filename per file:
