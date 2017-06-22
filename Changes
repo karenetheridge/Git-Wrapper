@@ -3,6 +3,7 @@ Revision history for {{$dist->name}}
 {{$NEXT}}
 
        POD typo fix (Сергей Романов)
+       Include dist.ini in distribution (Karen Etheridge)
 
 0.047     2016-09-18 15:30:58-07:00 America/Los_Angeles
 
