@@ -28,6 +28,9 @@ diag( "Testing git version: " . $version );
 
 $git->init; # 'git init' also added in v1.5.0 so we're safe
 
+# see https://github.com/genehack/Git-Wrapper/issues/91
+$git->config('commit.gpgsign', 'false');
+
 $git->config( 'user.name'  , 'Test User'        );
 $git->config( 'user.email' , 'test@example.com' );
 
