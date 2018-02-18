@@ -215,12 +215,12 @@ my @arg_tests = (
     ['m',       'short arg w spaces',   'short arg, spaces in val',    ],
 );
 
-my $arg_file = IO::File->new('>' . File::Spec->catfile($dir, qw(argument_testfile)));
-
 for my $arg_test (@arg_tests) {
     my ($flag, $msg, $descr) = @$arg_test;
 
+    my $arg_file = IO::File->new('>' . File::Spec->catfile($dir, qw(argument_testfile)));
     $arg_file->print("$msg\n");
+    $arg_file->close;
     $git->add('argument_testfile');
     $git->commit({ $flag => $msg });
 
