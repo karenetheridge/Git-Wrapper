@@ -2,12 +2,15 @@ Revision history for {{$dist->name}}
 
 {{$NEXT}}
 
-       POD typo fix (Сергей Романов)
-       Include dist.ini in distribution (Karen Etheridge)
+        update t/path_class.t to remove tilde; fixes [#41] (Jean-Damien.Durand)
+        Unset (possible) global gpgsign [#91] (Sergey Romanov)
+        remove timing bug in basic.t (Christian Walde)
+        POD typo fix (Сергей Романов)
+        Include dist.ini in distribution (Karen Etheridge)
 
 0.047     2016-09-18 15:30:58-07:00 America/Los_Angeles
 
-       Properly track commits in test (Graham Knop)
+        Properly track commits in test (Graham Knop)
 
 0.046     2016-09-12 20:13:04-07:00 America/Los_Angeles
 
