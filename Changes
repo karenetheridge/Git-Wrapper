@@ -2,6 +2,8 @@ Revision history for {{$dist->name}}
 
 {{$NEXT}}
 
+0.048     2018-03-29 11:14:42-07:00 America/Los_Angeles
+
         No changes since last development release.
 
 0.047_090 2018-03-19 21:19:22-07:00 America/Los_Angeles (TRIAL RELEASE)
