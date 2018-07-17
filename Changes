@@ -2,6 +2,8 @@ Revision history for {{$dist->name}}
 
 {{$NEXT}}
 
+0.048_090 2018-07-17 14:20:56-07:00 America/Los_Angeles (TRIAL RELEASE)
+
         Add new test for statuses <Kivanc Yazan>
         Use IPC::Run3::run3 rather than IPC::Open3::open3 <Andrew Ruder>
 
